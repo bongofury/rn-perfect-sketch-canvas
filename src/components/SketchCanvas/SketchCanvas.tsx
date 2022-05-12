@@ -146,10 +146,10 @@ export const SketchCanvas = forwardRef<SketchCanvasRef, SketchCanvasProps>(
     return (
       <Canvas ref={canvasRef} onTouch={touchHandler} style={containerStyle}>
         {children}
-        {pathsSnapshot.completed.map((path) => (
+        {pathsSnapshot.completed.map((path, idx) => (
           <Path
             path={path.path}
-            key={path.id}
+            key={idx}
             style={path.style}
             color={path.color}
           />
